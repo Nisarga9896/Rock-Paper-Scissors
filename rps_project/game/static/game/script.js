@@ -5,12 +5,12 @@ let compHealth = 100;
 const playerImg = document.getElementById("player-img");
 const compImg = document.getElementById("comp-img");
 
-// CACHE FIX
+
 function getImage(choice) {
     return "/static/game/images/" + choice + ".png?v=" + new Date().getTime();
 }
 
-// HEALTH COLOR
+
 function getColor(h) {
     if (h > 70) return "#00ff88";
     if (h > 40) return "#ffee00";
@@ -19,7 +19,7 @@ function getColor(h) {
     return "transparent";
 }
 
-// UPDATE HEALTH
+
 function updateHealth() {
     const p = document.getElementById("player-health");
     const c = document.getElementById("comp-health");
@@ -31,7 +31,7 @@ function updateHealth() {
     c.style.background = getColor(compHealth);
 }
 
-// GAME FUNCTION
+
 function playGame(choice) {
 
     if (playerHealth <= 0 || compHealth <= 0) {
@@ -39,26 +39,26 @@ function playGame(choice) {
         return;
     }
 
-    // ✅ FIXED: using rock1 everywhere
+    
     const choices = ["rock1", "paper", "scissors"];
     const computer = choices[Math.floor(Math.random() * 3)];
 
-    // UPDATE IMAGES
+    
     playerImg.src = getImage(choice);
     compImg.src = getImage(computer);
 
-    // RESET ANIMATION
+    
     playerImg.classList.remove("attack-left");
     compImg.classList.remove("attack-right");
 
     void playerImg.offsetWidth;
     void compImg.offsetWidth;
 
-    // ATTACK MOVE
+    
     playerImg.classList.add("attack-left");
     compImg.classList.add("attack-right");
 
-    // COLLISION 💥
+    
     const flash = document.createElement("div");
     flash.innerText = " ";
     flash.className = "flash";
@@ -70,7 +70,7 @@ function playGame(choice) {
         flash.remove();
     }, 400);
 
-    // ✅ FIXED GAME LOGIC
+    
     if (
         (choice === "rock1" && computer === "scissors") ||
         (choice === "paper" && computer === "rock1") ||
@@ -87,13 +87,13 @@ function playGame(choice) {
         document.getElementById("result").innerText = "YOU LOSE";
     }
 
-    // NO NEGATIVE
+    
     playerHealth = Math.max(playerHealth, 0);
     compHealth = Math.max(compHealth, 0);
 
     updateHealth();
 
-    // FINAL RESULT
+    
     if (playerHealth === 0) {
         document.getElementById("result").innerText = "YOU LOST THE BATTLE";
     }
@@ -103,6 +103,6 @@ function playGame(choice) {
     }
 }
 
-// LOAD
+
 window.onload = updateHealth;
 console.log("NEW JS LOADED");

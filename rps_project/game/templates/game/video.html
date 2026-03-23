@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Starting Soon</title>
+</head>
+<body style="margin:0; background:black;">
+
+<video id="introVideo" autoplay style="width:100%; height:100%; object-fit:cover;">
+    <source src="/static/game/images/video.png" type="video/mp4">
+</video>
+
+<script>
+document.getElementById("introVideo").onended = function() {
+    window.location.href = "/game/";
+};
+</script>
+
+</body>
+</html>

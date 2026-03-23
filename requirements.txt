@@ -1,0 +1,9 @@
+asgiref==3.11.1
+Django==6.0.3
+jsonpointer==2.1
+setuptools==78.1.1
+sqlparse==0.5.5
+tzdata==2025.3
+wheel==0.45.1
+gunicorn==21.2.0
+whitenoise==6.6.0

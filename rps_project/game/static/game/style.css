@@ -1,16 +1,15 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* FULL SCREEN BACKGROUND FIX */
+
 html, body {
     height: 100%;
 }
 
-/* BODY */
+
 body {
     min-height: 100vh;
     font-family: 'Orbitron', sans-serif;
@@ -20,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* PERFECT FULL SCREEN BACKGROUND */
+    
     background: 
     linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), 
     url("/static/game/images/ground.jpg");
@@ -32,7 +31,7 @@ body {
 }
 
 
-/* TITLE */
+
 .title {
     margin-top: 20px;
     font-size: 20px;
@@ -40,9 +39,9 @@ body {
     opacity: 0.9;
 }
 
-/* MAIN TITLE (BIG ONE) */
+
 .main-title {
-    font-size: 60px;   /* scales with screen width */
+    font-size: 60px;   
     font-weight: 900;
     letter-spacing: 5px;
 
@@ -51,33 +50,33 @@ body {
         0 0 20px #42a692,
         0 0 30px #38635b;
 }
-/* ARENA (TAKES FULL HEIGHT) */
+
 .arena {
-    flex: 1;   /* THIS FIXES WHITE SPACE */
+    flex: 1;   
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 80px;
 }
 
-/* PLAYER BOX */
+
 .player-box {
     width: 40%;
 }
 
-/* PLAYER NAME */
+
 .player-box h2 {
     margin-bottom: 10px;
 }
 
-/* IMAGES */
+
 img {
     width: 200px;
     margin-top: 20px;
     transition: transform 0.2s ease;
 }
 
-/* HEALTH BAR */
+
 .health-bar {
     width: 100%;
     height: 18px;
@@ -93,7 +92,7 @@ img {
     transition: width 0.3s ease;
 }
 
-/* VS */
+
 .vs {
     font-size: 45px;
     font-weight: bold;
@@ -101,7 +100,7 @@ img {
     position: relative;
 }
 
-/* CENTER LINE */
+
 .vs::before {
     content: "";
     position: absolute;
@@ -113,7 +112,7 @@ img {
     background: rgba(255,255,255,0.2);
 }
 
-/* BUTTONS */
+
 .buttons {
     margin: 20px 0 30px;
 }
@@ -135,7 +134,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* ATTACK ANIMATION */
+
 .attack-left {
     transform: translateX(60px);
 }
@@ -144,7 +143,7 @@ button:hover {
     transform: translateX(-60px);
 }
 
-/* COLLISION */
+
 .flash {
     position: absolute;
     top: 50%;
