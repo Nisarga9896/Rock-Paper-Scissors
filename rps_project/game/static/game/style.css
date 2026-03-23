@@ -1,0 +1,170 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FULL SCREEN BACKGROUND FIX */
+html, body {
+    height: 100%;
+}
+
+/* BODY */
+body {
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    /* PERFECT FULL SCREEN BACKGROUND */
+    background: 
+    linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), 
+    url("/static/game/images/ground.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* TITLE */
+.title {
+    margin-top: 20px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+/* MAIN TITLE (BIG ONE) */
+.main-title {
+    font-size: 60px;   /* scales with screen width */
+    font-weight: 900;
+    letter-spacing: 5px;
+
+    text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #42a692,
+        0 0 30px #38635b;
+}
+/* ARENA (TAKES FULL HEIGHT) */
+.arena {
+    flex: 1;   /* THIS FIXES WHITE SPACE */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+/* PLAYER BOX */
+.player-box {
+    width: 40%;
+}
+
+/* PLAYER NAME */
+.player-box h2 {
+    margin-bottom: 10px;
+}
+
+/* IMAGES */
+img {
+    width: 200px;
+    margin-top: 20px;
+    transition: transform 0.2s ease;
+}
+
+/* HEALTH BAR */
+.health-bar {
+    width: 100%;
+    height: 18px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#player-health, #comp-health {
+    height: 100%;
+    width: 100%;
+    background: lime;
+    transition: width 0.3s ease;
+}
+
+/* VS */
+.vs {
+    font-size: 45px;
+    font-weight: bold;
+    opacity: 0.8;
+    position: relative;
+}
+
+/* CENTER LINE */
+.vs::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 400px;
+    background: rgba(255,255,255,0.2);
+}
+
+/* BUTTONS */
+.buttons {
+    margin: 20px 0 30px;
+}
+
+button {
+    padding: 14px 28px;
+    margin: 10px;
+    font-size: 20px;
+    border: 2px solid rgba(255,255,255,0.5);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+/* ATTACK ANIMATION */
+.attack-left {
+    transform: translateX(60px);
+}
+
+.attack-right {
+    transform: translateX(-60px);
+}
+
+/* COLLISION */
+.flash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    animation: pop 0.4s ease;
+}
+
+
+@keyframes pop {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+}
+
+#result {
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}

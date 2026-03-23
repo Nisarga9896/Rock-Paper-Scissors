@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RPS Battle</title>
+   <link rel="stylesheet" href="{% static 'game/style.css' %}?v=16">
+</head>
+
+<body>
+
+<h1 class="title main-title">ROCK PAPER SCISSORS</h1>
+<h2 class="title">BATTLE FOR VICTORY</h2>
+
+<div class="arena">
+
+    <!-- PLAYER -->
+    <div class="player-box">
+        <h2>YOU</h2>
+        <div class="health-bar"><div id="player-health"></div></div>
+        <img id="player-img" src="{% static 'game/images/rock1.png' %}">
+    </div>
+
+
+    <!-- COMPUTER -->
+    <div class="player-box">
+        <h2>COMPUTER</h2>
+        <div class="health-bar"><div id="comp-health"></div></div>
+        <img id="comp-img" src="{% static 'game/images/rock1.png' %}">
+    </div>
+
+</div>
+
+<div class="buttons">
+    <button onclick="playGame('rock1')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+</div>
+
+<h2 id="result"></h2>
+
+<script src="{% static 'game/script.js' %}"></script>
+
+</body>
+</html>
