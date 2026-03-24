@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-oos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'rps_project.settings')
-
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'rps_project.settings')
 application = get_wsgi_application()
